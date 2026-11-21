@@ -194,7 +194,7 @@
             <!-- Subjudul Peran Dinamis -->
             <div class="h-10 sm:h-12 flex items-center justify-center mb-6">
                 <p class="text-base sm:text-xl md:text-2xl font-medium text-slate-200">
-                    <span id="typewriter-text"></span><span class="cursor-blink">&nbsp;</span>
+                    <span id="typewriter-text"></span><span class="cursor-blink"> </span>
                 </p>
             </div>
 
@@ -579,32 +579,36 @@
                                     <i class="fas fa-calendar-check"></i>
                                 </div>
                                 <span class="text-xs font-medium text-emerald-300 bg-slate-950/85 px-3 py-1 rounded-full border border-emerald-500/30">
-                                    Skripsi • Java NetBeans, MySQL & Agentic AI
+                                    Web App • PHP, MySQL & Agentic AI
                                 </span>
                             </div>
                         </div>
 
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-white mb-2.5">
-                                Aplikasi Reservasi Layanan Steam Kendaraan & Analisis Celah Jadwal Agentic AI
+                                Sistem Reservasi Lapangan Futsal Liverpool & Analisis Celah Jadwal Agentic AI
                             </h3>
                             <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                                Sistem manajemen pemesanan layanan cuci kendaraan berbasis desktop (Java NetBeans) dan basis data MySQL yang terintegrasi dengan modul Agentic AI untuk mendeteksi kekosongan jadwal serta mengoptimalkan kapasitas antrean.
+                                Aplikasi web manajemen pemesanan lapangan futsal berbasis PHP dan basis data MySQL yang terintegrasi dengan modul Agentic AI untuk mendeteksi kekosongan jadwal serta mengoptimalkan kapasitas penyewaan lapangan.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-slate-800 text-sky-300">Java NetBeans</span>
+                                <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-slate-800 text-sky-300">PHP</span>
                                 <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-slate-800 text-emerald-300">MySQL</span>
                                 <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-slate-800 text-amber-300">Agentic AI</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="px-6 pb-6 pt-2 flex items-center justify-between gap-3">
-                        <button onclick="openProjectModal(0)" class="flex-1 py-2.5 px-4 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/40 text-sky-300 font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
-                            <i class="fas fa-eye"></i>
-                            <span>Lihat Detail Proyek</span>
+                    <div class="px-6 pb-6 pt-2 flex items-center justify-between gap-2.5">
+                        <button onclick="openProjectModal(0)" class="py-2.5 px-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold text-xs transition-all flex items-center justify-center gap-1.5">
+                            <i class="fas fa-info-circle text-sky-400"></i>
+                            <span>Detail</span>
                         </button>
-                        <a href="https://github.com/satriaputraaaa" target="_blank" rel="noopener noreferrer" aria-label="Buka Repositori GitHub" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors">
+                        <a href="http://satriaaaa.site.je/futsalliverpool/login.php" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-3.5 rounded-xl bg-gradient-primary text-white font-semibold text-xs transition-all flex items-center justify-center gap-1.5 hover:opacity-90">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/satriaputraaaa/futsalliverpool" target="_blank" rel="noopener noreferrer" aria-label="Buka Repositori GitHub" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors">
                             <i class="fab fa-github text-lg"></i>
                         </a>
                     </div>
@@ -758,7 +762,7 @@
     <footer class="py-8 border-t border-slate-800/80 text-center text-slate-400 text-xs sm:text-sm">
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p>
-                &copy; 2026 <span class="text-slate-200 font-semibold">Satria Mandala Putra</span>. Hak Cipta Dilindungi.
+                © 2026 <span class="text-slate-200 font-semibold">Satria Mandala Putra</span>. Hak Cipta Dilindungi.
             </p>
             <p class="text-xs text-slate-500">
                 Portofolio Profesional Bidang Teknologi Informasi & Infrastruktur
@@ -795,11 +799,18 @@
 
             <div class="flex flex-wrap items-center justify-between gap-4">
                 <div id="modal-tags" class="flex flex-wrap gap-2"></div>
-                <a id="modal-github-link" href="https://github.com/satriaputraaaa" target="_blank" rel="noopener noreferrer" 
-                   class="px-5 py-2.5 rounded-xl bg-gradient-primary text-white font-semibold text-xs sm:text-sm flex items-center gap-2 hover:opacity-90 transition-opacity">
-                    <i class="fab fa-github text-base"></i>
-                    <span>Buka Repositori GitHub</span>
-                </a>
+                <div class="flex items-center gap-2.5">
+                    <a id="modal-demo-link" href="http://satriaaaa.site.je/futsalliverpool/login.php" target="_blank" rel="noopener noreferrer" 
+                       class="hidden px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-sky-300 font-semibold text-xs sm:text-sm items-center gap-2 transition-colors">
+                        <i class="fas fa-external-link-alt text-xs"></i>
+                        <span>Buka Live Demo</span>
+                    </a>
+                    <a id="modal-github-link" href="https://github.com/satriaputraaaa" target="_blank" rel="noopener noreferrer" 
+                       class="px-5 py-2.5 rounded-xl bg-gradient-primary text-white font-semibold text-xs sm:text-sm flex items-center gap-2 hover:opacity-90 transition-opacity">
+                        <i class="fab fa-github text-base"></i>
+                        <span>Buka Repositori GitHub</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -809,16 +820,17 @@
         // 1. DATA RINCIAN PROYEK
         const projectsData = [
             {
-                category: "Aplikasi Desktop & Agentic AI (Tugas Akhir / Skripsi)",
-                title: "Aplikasi Reservasi Layanan Steam Kendaraan & Analisis Celah Jadwal Agentic AI",
-                desc: "Aplikasi manajemen pemesanan layanan cuci dan perawatan kendaraan berbasis desktop (Java NetBeans) dan basis data MySQL. Sistem ini dirancang untuk mencegah bentrok jadwal layanan sekaligus mengoptimalkan tingkat okupansi harian melalui analisis otomatis berbasis Agentic AI.",
+                category: "Aplikasi Web & Agentic AI",
+                title: "Sistem Reservasi Lapangan Futsal Liverpool & Analisis Celah Jadwal Agentic AI",
+                desc: "Aplikasi web manajemen pemesanan lapangan futsal berbasis PHP dan basis data MySQL. Sistem ini dirancang untuk mencegah bentrok jadwal sewa lapangan sekaligus mengoptimalkan tingkat okupansi harian melalui analisis otomatis berbasis Agentic AI.",
                 highlights: [
                     "Perancangan basis data relasional MySQL dengan validasi pencegahan jadwal ganda secara waktu nyata.",
                     "Integrasi modul Agentic AI yang memindai pola pemesanan harian untuk mendeteksi celah waktu kosong (idle slots).",
                     "Penyusunan rekomendasi penjadwalan ulang secara otomatis serta rekapitulasi laporan transaksi terpadu."
                 ],
-                tags: ["Java NetBeans", "MySQL", "Koneksi JDBC", "Agentic AI", "Analisis Sistem"],
-                githubUrl: "https://github.com/satriaputraaaa"
+                tags: ["PHP", "MySQL", "Agentic AI", "Analisis Sistem"],
+                githubUrl: "https://github.com/satriaputraaaa/futsalliverpool",
+                demoUrl: "http://satriaaaa.site.je/futsalliverpool/login.php"
             },
             {
                 category: "Infrastruktur Jaringan & Diagnostik Perangkat Keras",
@@ -830,7 +842,8 @@
                     "Pencatatan log gangguan secara terstruktur untuk mempercepat penelusuran akar permasalahan teknis."
                 ],
                 tags: ["Pemantauan Jaringan", "Diagnostik Perangkat Keras", "TCP/IP", "Laporan Teknis"],
-                githubUrl: "https://github.com/satriaputraaaa"
+                githubUrl: "https://github.com/satriaputraaaa",
+                demoUrl: ""
             },
             {
                 category: "Operasional Teknis & Dokumentasi Sistem",
@@ -842,7 +855,8 @@
                     "Tampilan antarmuka yang ringan dan responsif sehingga mudah diakses melalui perangkat seluler saat bertugas di lapangan."
                 ],
                 tags: ["HTML5", "Tailwind CSS", "JavaScript", "Dokumentasi SOP", "Operasional Lapangan"],
-                githubUrl: "https://github.com/satriaputraaaa"
+                githubUrl: "https://github.com/satriaputraaaa",
+                demoUrl: ""
             }
         ];
 
@@ -1099,6 +1113,16 @@
             document.getElementById('modal-title').textContent = data.title;
             document.getElementById('modal-desc').textContent = data.desc;
             document.getElementById('modal-github-link').href = data.githubUrl;
+
+            const demoLink = document.getElementById('modal-demo-link');
+            if (data.demoUrl) {
+                demoLink.href = data.demoUrl;
+                demoLink.classList.remove('hidden');
+                demoLink.classList.add('flex');
+            } else {
+                demoLink.classList.add('hidden');
+                demoLink.classList.remove('flex');
+            }
 
             const highlightsList = document.getElementById('modal-highlights');
             highlightsList.innerHTML = data.highlights.map(item => 
