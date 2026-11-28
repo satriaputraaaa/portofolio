@@ -124,17 +124,24 @@
     <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20">
-                <!-- Identitas Merek & Pas Foto -->
-                <a href="#beranda" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-sky-400/80 shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform bg-slate-800 shrink-0">
-                        <img id="nav-pasfoto"
-                             src="./pasfoto.jpg" 
-                             alt="Satria Mandala Putra" 
-                             class="w-full h-full object-cover object-top">
+                <!-- Identitas Merek & Pas Foto Proporsional -->
+                <a href="#beranda" class="flex items-center gap-3.5 group">
+                    <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full p-[2px] bg-gradient-primary shadow-lg shadow-sky-500/25 group-hover:scale-105 transition-transform duration-300 shrink-0">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-slate-900">
+                            <img id="nav-pasfoto"
+                                 src="./pasfoto.jpg" 
+                                 alt="Satria Mandala Putra" 
+                                 class="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-300">
+                        </div>
                     </div>
-                    <span class="font-bold text-base sm:text-lg tracking-tight text-white">
-                        Satria Mandala Putra
-                    </span>
+                    <div class="flex flex-col text-left">
+                        <span class="font-bold text-base sm:text-lg tracking-tight text-white leading-tight group-hover:text-sky-300 transition-colors">
+                            Satria Mandala Putra
+                        </span>
+                        <span class="text-[11px] font-medium text-sky-400/90 hidden sm:block">
+                            S.Kom. • IT & Infrastruktur
+                        </span>
+                    </div>
                 </a>
 
                 <!-- Menu Navigasi Desktop -->
@@ -723,7 +730,7 @@
                 <div class="max-w-md mx-auto mb-8">
                     <div class="flex items-center justify-between p-2 pl-4 rounded-xl bg-slate-950 border border-slate-800">
                         <span id="user-email" class="font-mono text-xs sm:text-sm text-sky-300 truncate select-all">
-                            satriaputtrraa@gmail.com
+                            satriaput17@gmail.com
                         </span>
                         <button id="copy-email-btn" onclick="copyEmail()" class="px-4 py-2 rounded-lg bg-gradient-primary text-white font-semibold text-xs flex items-center gap-1.5 hover:opacity-90 transition-opacity shrink-0">
                             <i class="fas fa-copy" id="copy-icon"></i>
@@ -743,15 +750,13 @@
                         <span>Profil GitHub</span>
                     </a>
                     
-                    <!-- EDIT: Ganti tautan LinkedIn Anda di bawah ini -->
-                    <a href="https://linkedin.com/in/username-linkedin-anda" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://www.linkedin.com/in/satria-mandala-putra-9748b9452" target="_blank" rel="noopener noreferrer" 
                        class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-emerald-400 text-white font-semibold text-sm flex items-center gap-2.5 transition-all">
                         <i class="fab fa-linkedin text-lg text-emerald-400"></i>
                         <span>LinkedIn</span>
                     </a>
 
-                    <!-- EDIT: Ganti nomor WhatsApp Anda di bawah ini (format: https://wa.me/62812xxxx) -->
-                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://wa.me/6289643983286" target="_blank" rel="noopener noreferrer" 
                        class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-emerald-400 text-white font-semibold text-sm flex items-center gap-2.5 transition-all">
                         <i class="fab fa-whatsapp text-lg text-emerald-400"></i>
                         <span>WhatsApp</span>
