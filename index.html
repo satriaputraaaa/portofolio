@@ -126,10 +126,10 @@
             <div class="flex items-center justify-between h-16 sm:h-20">
                 <!-- Identitas Merek & Pas Foto -->
                 <a href="#beranda" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-sky-400/70 shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform bg-slate-800 shrink-0">
-                        <img src="pasfoto.jpg" 
-                             onerror="if(!this.dataset.step){this.dataset.step='1';this.src='pasfoto.png';}else if(this.dataset.step==='1'){this.dataset.step='2';this.src='pasfoto.jpeg';}else if(this.dataset.step==='2'){this.dataset.step='3';this.src='pasfoto';}" 
-                             alt="Foto Satria Mandala Putra" 
+                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-sky-400/80 shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform bg-slate-800 shrink-0">
+                        <img id="nav-pasfoto"
+                             src="./pasfoto.jpg" 
+                             alt="Satria Mandala Putra" 
                              class="w-full h-full object-cover object-top">
                     </div>
                     <span class="font-bold text-base sm:text-lg tracking-tight text-white">
@@ -820,6 +820,33 @@
 
     <!-- ================= SKRIP INTERAKTIVITAS & ANIMASI ================= -->
     <script>
+        // 0. FALLBACK OTOMATIS PEMUATAN PASFOTO DARI GITHUB
+        (function() {
+            const img = document.getElementById('nav-pasfoto');
+            if (!img) return;
+            const candidates = [
+                './pasfoto.jpg',
+                './pasfoto.png',
+                './pasfoto.jpeg',
+                './Pasfoto.jpg',
+                './Pasfoto.png',
+                './PASFOTO.jpg',
+                './PASFOTO.JPG',
+                'https://raw.githubusercontent.com/satriaputraaaa/portofolio/main/pasfoto.jpg',
+                'https://raw.githubusercontent.com/satriaputraaaa/portofolio/main/pasfoto.png',
+                'https://raw.githubusercontent.com/satriaputraaaa/portofolio/main/pasfoto.jpeg',
+                'https://raw.githubusercontent.com/satriaputraaaa/portofolio/master/pasfoto.jpg',
+                'https://raw.githubusercontent.com/satriaputraaaa/portofolio/master/pasfoto.png'
+            ];
+            let idx = 0;
+            img.addEventListener('error', function() {
+                idx++;
+                if (idx < candidates.length) {
+                    img.src = candidates[idx];
+                }
+            });
+        })();
+
         // 1. DATA RINCIAN PROYEK
         const projectsData = [
             {
