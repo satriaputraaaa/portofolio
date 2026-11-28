@@ -41,22 +41,11 @@
     </script>
 
     <style>
-        /* Kustomisasi Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #090D16;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1E293B;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #38BDF8;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #090D16; }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #38BDF8; }
 
-        /* Efek Navigasi Kaca (Glassmorphism) */
         .glass-nav {
             background: rgba(9, 13, 22, 0.85);
             backdrop-filter: blur(14px);
@@ -64,7 +53,6 @@
             border-bottom: 1px solid rgba(30, 41, 59, 0.8);
         }
 
-        /* Kartu Modern dengan Kedalaman Visual */
         .exec-card {
             background: linear-gradient(145deg, rgba(21, 30, 50, 0.9), rgba(17, 24, 39, 0.96));
             border: 1px solid rgba(56, 189, 248, 0.14);
@@ -87,7 +75,6 @@
             background: linear-gradient(135deg, #0284C7 0%, #10B981 100%);
         }
 
-        /* Animasi Muncul Saat Di-scroll */
         .reveal {
             opacity: 0;
             transform: translateY(24px);
@@ -98,7 +85,6 @@
             transform: translateY(0);
         }
 
-        /* Kursor Efek Pengetikan */
         .cursor-blink {
             display: inline-block;
             width: 2.5px;
@@ -111,7 +97,6 @@
             50%, 100% { opacity: 0; }
         }
 
-        /* Animasi Batang Keahlian */
         .skill-fill {
             width: 0%;
             transition: width 1.3s cubic-bezier(0.22, 1, 0.36, 1);
@@ -127,11 +112,12 @@
                 <!-- Identitas Merek & Pas Foto Proporsional -->
                 <a href="#beranda" class="flex items-center gap-3.5 group">
                     <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full p-[2px] bg-gradient-primary shadow-lg shadow-sky-500/25 group-hover:scale-105 transition-transform duration-300 shrink-0">
-                        <div class="w-full h-full rounded-full overflow-hidden bg-slate-900">
+                        <div id="avatar-wrapper" class="w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
                             <img id="nav-pasfoto"
                                  src="./pasfoto.jpg" 
-                                 alt="Satria Mandala Putra" 
+                                 alt="" 
                                  class="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-300">
+                            <span id="avatar-fallback" class="hidden font-bold text-xs sm:text-sm text-sky-400 tracking-wider">SMP</span>
                         </div>
                     </div>
                     <div class="flex flex-col text-left">
@@ -180,14 +166,10 @@
 
     <!-- ================= BAGIAN UTAMA (HERO SECTION) ================= -->
     <section id="beranda" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <!-- Kanvas Animasi Jaringan Geometris Interaktif -->
         <canvas id="network-canvas" class="absolute inset-0 w-full h-full pointer-events-auto z-0"></canvas>
-        
-        <!-- Pencahayaan Latar Halus -->
         <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[560px] h-[320px] sm:h-[560px] bg-sky-500/10 rounded-full blur-[130px] pointer-events-none z-0"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center pointer-events-none">
-            <!-- Lencana Status Ketersediaan Kerja -->
             <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-sky-500/30 text-sky-300 text-xs sm:text-sm font-medium mb-6 backdrop-blur-md">
                 <span class="relative flex h-2.5 w-2.5">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -196,24 +178,20 @@
                 <span>Tersedia untuk Peluang Karier Bidang Operasional IT & Infrastruktur</span>
             </div>
 
-            <!-- Nama Lengkap -->
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 leading-tight">
                 <span class="text-gradient">Satria Mandala Putra, S.Kom.</span>
             </h1>
 
-            <!-- Subjudul Peran Dinamis -->
             <div class="h-10 sm:h-12 flex items-center justify-center mb-6">
                 <p class="text-base sm:text-xl md:text-2xl font-medium text-slate-200">
                     <span id="typewriter-text"></span><span class="cursor-blink"> </span>
                 </p>
             </div>
 
-            <!-- Ringkasan Profesional -->
             <p class="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed mb-10">
                 Lulusan Sarjana (S1) Teknik Informatika Universitas Indraprasta PGRI (2026) yang berfokus pada pengelolaan infrastruktur IT, pemeliharaan serta diagnostik perangkat keras, operasional teknis lapangan, dan penerapan otomatisasi Agentic AI untuk efisiensi kerja.
             </p>
 
-            <!-- Tombol Aksi Utama -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto">
                 <a href="#proyek" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-primary text-white font-semibold text-sm sm:text-base shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2.5">
                     <i class="fas fa-folder-open"></i>
@@ -225,7 +203,6 @@
                 </a>
             </div>
 
-            <!-- 4 Kartu Metrik Utama -->
             <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto pointer-events-auto">
                 <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-sm">
                     <div class="text-sm sm:text-base font-bold text-sky-400">S1 Teknik Informatika</div>
@@ -251,11 +228,8 @@
     <section id="profil" class="py-20 sm:py-28 relative border-t border-slate-800/70">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Kolom Kiri: Kartu Ringkasan Kandidat -->
                 <div class="lg:col-span-5 reveal">
                     <div class="rounded-2xl bg-exec-surface border border-slate-800 shadow-2xl overflow-hidden">
-                        <!-- Header Kartu -->
                         <div class="bg-slate-900/90 px-6 py-4 border-b border-slate-800 flex items-center justify-between">
                             <div class="flex items-center gap-2.5">
                                 <i class="fas fa-id-card text-sky-400"></i>
@@ -266,7 +240,6 @@
                             </span>
                         </div>
                         
-                        <!-- Isi Data Kandidat -->
                         <div class="p-6 space-y-5 text-sm">
                             <div class="border-b border-slate-800/80 pb-4">
                                 <span class="text-xs font-medium uppercase tracking-wider text-slate-400 block mb-1">Nama Lengkap</span>
@@ -318,7 +291,6 @@
                     </div>
                 </div>
 
-                <!-- Kolom Kanan: Narasi Latar Belakang -->
                 <div class="lg:col-span-7 reveal">
                     <div class="inline-flex items-center gap-2 text-sky-400 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3">
                         <span class="w-8 h-[2px] bg-sky-400"></span>
@@ -339,7 +311,6 @@
                         </p>
                     </div>
 
-                    <!-- Dua Kartu Pilar Utama -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                         <div class="p-5 rounded-xl bg-exec-surface border border-slate-800 flex items-start gap-3.5">
                             <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
@@ -361,7 +332,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -379,9 +349,7 @@
                 </p>
             </div>
 
-            <!-- Grid Kartu Keahlian -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
                 <!-- Keahlian 1 -->
                 <div class="exec-card p-6 rounded-2xl reveal">
                     <div class="flex items-center justify-between mb-4">
@@ -542,7 +510,6 @@
                         <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700">Diagram UML</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -559,7 +526,6 @@
                     <h2 class="text-3xl sm:text-4xl font-bold text-white">Portofolio Proyek Unggulan</h2>
                 </div>
 
-                <!-- Tombol Filter Kategori Proyek -->
                 <div class="flex flex-wrap gap-2" id="project-filters">
                     <button data-filter="all" class="filter-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-gradient-primary text-white transition-all">
                         Semua Proyek
@@ -576,9 +542,7 @@
                 </div>
             </div>
 
-            <!-- Grid Kartu Proyek -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
-                
                 <!-- PROYEK 1 -->
                 <article class="project-card exec-card rounded-2xl overflow-hidden flex flex-col justify-between reveal" data-category="ai-dev">
                     <div>
@@ -705,7 +669,6 @@
                         </a>
                     </div>
                 </article>
-
             </div>
         </div>
     </section>
@@ -726,7 +689,6 @@
                     Apabila Bapak/Ibu membutuhkan kandidat untuk posisi <strong class="text-white">Dukungan Teknis (IT Support), Infrastruktur Jaringan, Operasional Teknis, maupun Pemeliharaan Perangkat Keras</strong>, silakan hubungi saya melalui kontak berikut.
                 </p>
 
-                <!-- Kotak Salin Alamat Email -->
                 <div class="max-w-md mx-auto mb-8">
                     <div class="flex items-center justify-between p-2 pl-4 rounded-xl bg-slate-950 border border-slate-800">
                         <span id="user-email" class="font-mono text-xs sm:text-sm text-sky-300 truncate select-all">
@@ -742,7 +704,6 @@
                     </p>
                 </div>
 
-                <!-- Tautan Media Sosial & Repositori -->
                 <div class="flex flex-wrap items-center justify-center gap-4">
                     <a href="https://github.com/satriaputraaaa" target="_blank" rel="noopener noreferrer" 
                        class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-sky-400 text-white font-semibold text-sm flex items-center gap-2.5 transition-all">
@@ -781,7 +742,6 @@
     <!-- ================= MODAL DETAIL PROYEK ================= -->
     <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
         <div class="bg-exec-surface border border-sky-500/30 rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative transform transition-all scale-95 opacity-0" id="modal-box">
-            <!-- Tombol Tutup -->
             <button onclick="closeProjectModal()" aria-label="Tutup Jendela Detail" class="absolute top-4 right-4 w-9 h-9 rounded-lg bg-slate-800 hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 flex items-center justify-center transition-colors">
                 <i class="fas fa-times"></i>
             </button>
@@ -800,9 +760,7 @@
 
             <div class="bg-slate-950/75 rounded-xl p-4 border border-slate-800 mb-6">
                 <h4 class="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-3">Rincian Implementasi & Fitur Utama:</h4>
-                <ul id="modal-highlights" class="space-y-2.5 text-xs sm:text-sm text-slate-300">
-                    <!-- Diisi secara dinamis melalui JavaScript -->
-                </ul>
+                <ul id="modal-highlights" class="space-y-2.5 text-xs sm:text-sm text-slate-300"></ul>
             </div>
 
             <div class="flex flex-wrap items-center justify-between gap-4">
@@ -825,10 +783,12 @@
 
     <!-- ================= SKRIP INTERAKTIVITAS & ANIMASI ================= -->
     <script>
-        // 0. FALLBACK OTOMATIS PEMUATAN PASFOTO DARI GITHUB
+        // 0. PEMUATAN PASFOTO OTOMATIS DARI REPOSITORI GITHUB
         (function() {
             const img = document.getElementById('nav-pasfoto');
+            const fallback = document.getElementById('avatar-fallback');
             if (!img) return;
+
             const candidates = [
                 './pasfoto.jpg',
                 './pasfoto.png',
@@ -839,15 +799,32 @@
                 './PASFOTO.JPG',
                 'https://raw.githubusercontent.com/satriaputraaaa/portofolio/main/pasfoto.jpg',
                 'https://raw.githubusercontent.com/satriaputraaaa/portofolio/main/pasfoto.png',
-                'https://raw.githubusercontent.com/satriaputraaaa/portofolio/main/pasfoto.jpeg',
-                'https://raw.githubusercontent.com/satriaputraaaa/portofolio/master/pasfoto.jpg',
-                'https://raw.githubusercontent.com/satriaputraaaa/portofolio/master/pasfoto.png'
+                'https://raw.githubusercontent.com/satriaputraaaa/portofolio/main/pasfoto.jpeg'
             ];
             let idx = 0;
+
+            async function searchRepoImage() {
+                try {
+                    const res = await fetch('https://api.github.com/repos/satriaputraaaa/portofolio/contents/');
+                    if (!res.ok) throw new Error('Repo tidak ditemukan');
+                    const files = await res.json();
+                    const imageFile = files.find(f => f.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(f.name));
+                    if (imageFile && imageFile.download_url) {
+                        img.src = imageFile.download_url;
+                        return;
+                    }
+                } catch (e) {}
+                // Jika file gambar memang belum ada di repo, tampilkan inisial SMP secara rapi
+                img.classList.add('hidden');
+                if (fallback) fallback.classList.remove('hidden');
+            }
+
             img.addEventListener('error', function() {
                 idx++;
                 if (idx < candidates.length) {
                     img.src = candidates[idx];
+                } else {
+                    searchRepoImage();
                 }
             });
         })();
