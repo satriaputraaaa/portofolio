@@ -114,7 +114,7 @@
                     <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full p-[2px] bg-gradient-primary shadow-lg shadow-sky-500/25 group-hover:scale-105 transition-transform duration-300 shrink-0">
                         <div id="avatar-wrapper" class="w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
                             <img id="nav-pasfoto"
-                                 src="./pasfoto.jpg" 
+                                 src="pasfoto.jpg" 
                                  alt="" 
                                  class="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-300">
                             <span id="avatar-fallback" class="hidden font-bold text-xs sm:text-sm text-sky-400 tracking-wider">SMP</span>
@@ -692,7 +692,7 @@
                 <div class="max-w-md mx-auto mb-8">
                     <div class="flex items-center justify-between p-2 pl-4 rounded-xl bg-slate-950 border border-slate-800">
                         <span id="user-email" class="font-mono text-xs sm:text-sm text-sky-300 truncate select-all">
-                            satriaput17@gmail.com
+                            satriaputtrraa@gmail.com
                         </span>
                         <button id="copy-email-btn" onclick="copyEmail()" class="px-4 py-2 rounded-lg bg-gradient-primary text-white font-semibold text-xs flex items-center gap-1.5 hover:opacity-90 transition-opacity shrink-0">
                             <i class="fas fa-copy" id="copy-icon"></i>
@@ -783,20 +783,27 @@
 
     <!-- ================= SKRIP INTERAKTIVITAS & ANIMASI ================= -->
     <script>
-        // 0. PEMUATAN PASFOTO OTOMATIS DARI REPOSITORI GITHUB
+        // 0. PEMUATAN PASFOTO OTOMATIS DARI REPOSITORI ATAU PROFIL GITHUB
         (function() {
             const img = document.getElementById('nav-pasfoto');
             const fallback = document.getElementById('avatar-fallback');
             if (!img) return;
 
             const candidates = [
-                './pasfoto.jpg',
-                './pasfoto.png',
-                './pasfoto.jpeg',
-                './Pasfoto.jpg',
-                './Pasfoto.png',
-                './PASFOTO.jpg',
-                './PASFOTO.JPG',
+                'pasfoto.jpg',
+                'pasfoto.png',
+                'pasfoto.jpeg',
+                'Pasfoto.jpg',
+                'Pasfoto.png',
+                'PASFOTO.jpg',
+                'PASFOTO.JPG',
+                'foto.jpg',
+                'foto.png',
+                'profile.jpg',
+                'profile.png',
+                'img/pasfoto.jpg',
+                'assets/pasfoto.jpg',
+                'images/pasfoto.jpg',
                 'https://raw.githubusercontent.com/satriaputraaaa/portofolio/main/pasfoto.jpg',
                 'https://raw.githubusercontent.com/satriaputraaaa/portofolio/main/pasfoto.png',
                 'https://raw.githubusercontent.com/satriaputraaaa/portofolio/main/pasfoto.jpeg'
@@ -804,17 +811,33 @@
             let idx = 0;
 
             async function searchRepoImage() {
+                const repos = ['portofolio', 'satriaputraaaa.github.io'];
+                for (const repo of repos) {
+                    try {
+                        const res = await fetch(`https://api.github.com/repos/satriaputraaaa/${repo}/git/trees/main?recursive=1`);
+                        if (res.ok) {
+                            const data = await res.json();
+                            const imageFile = (data.tree || []).find(f => f.type === 'blob' && /\.(jpg|jpeg|png|webp)$/i.test(f.path));
+                            if (imageFile) {
+                                img.src = `https://raw.githubusercontent.com/satriaputraaaa/${repo}/main/${imageFile.path}`;
+                                return;
+                            }
+                        }
+                    } catch (e) {}
+                }
+
+                // Fallback ke foto profil akun GitHub jika tidak ada file gambar di repo
                 try {
-                    const res = await fetch('https://api.github.com/repos/satriaputraaaa/portofolio/contents/');
-                    if (!res.ok) throw new Error('Repo tidak ditemukan');
-                    const files = await res.json();
-                    const imageFile = files.find(f => f.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(f.name));
-                    if (imageFile && imageFile.download_url) {
-                        img.src = imageFile.download_url;
-                        return;
+                    const userRes = await fetch('https://api.github.com/users/satriaputraaaa');
+                    if (userRes.ok) {
+                        const userData = await userRes.json();
+                        if (userData.avatar_url) {
+                            img.src = userData.avatar_url;
+                            return;
+                        }
                     }
                 } catch (e) {}
-                // Jika file gambar memang belum ada di repo, tampilkan inisial SMP secara rapi
+
                 img.classList.add('hidden');
                 if (fallback) fallback.classList.remove('hidden');
             }
